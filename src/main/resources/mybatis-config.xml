@@ -16,5 +16,6 @@
     </environments>
     <mappers>
         <mapper resource="com\peace\mapper\TmUserMapper.xml"/>
+        <mapper resource="com\peace\mapper\TaskMapper.xml"/>
     </mappers>
 </configuration>
