@@ -47,7 +47,7 @@
         </javaClientGenerator>
 
         <!-- 指定要逆向分析哪些表：根据表要创建javaBean -->
-        <table tableName="sales_to_do_list" domainObjectName="Task"></table>
+        <table tableName="t_push_error" domainObjectName="PushError"></table>
 
         <!--&lt;!&ndash; 要生成哪些表 &ndash;&gt;-->
         <!--<table tableName="t_user" domainObjectName="user"-->

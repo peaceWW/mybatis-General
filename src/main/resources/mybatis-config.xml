@@ -17,5 +17,6 @@
     <mappers>
         <mapper resource="com\peace\mapper\TmUserMapper.xml"/>
         <mapper resource="com\peace\mapper\TaskMapper.xml"/>
+        <mapper resource="com\peace\mapper\PushErrorMapper.xml"/>
     </mappers>
 </configuration>

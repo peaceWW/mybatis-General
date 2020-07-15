@@ -184,8 +184,22 @@ public class HttpsClientUtils {
         }
         System.out.println("发送到手机端结果值"+result);
     }
+    public  static String sendToApp(TaskMode mode,String token) {
 
-    private static String testGetToken() {
+        Map<String,Object> params = new HashMap<String,Object>();
+        params.put("Title",mode.getTitle());
+        params.put("Title_en",mode.getTitleEn());
+        params.put("Body",mode.getBody());
+        params.put("Body_en",mode.getBodyEn());
+        params.put("ToUsers",mode.getToUsers());
+        params.put("User",mode.getUser());
+        params.put("UAID",mode.getuAID());
+        params.put("Type",mode.getType());
+        Map<String, String> result = HttpsClientUtils.getHttpsMessgFormSubmit("https://saic-cp-uat.joywok.com/appsapi/todos/add?app_access_token="+token,params,LOGGER);
+        return result.get("data");
+    }
+
+    public  static String testGetToken() {
         Map<String, String> result = HttpsClientUtils.getHttpsMessg("https://saic-cp-uat.joywok.com/appsapi/token/apptoken?corpid=9W8GSWagfjDEjIG4&corpsecret=LO12KX4gjmlIHuei3LUQwC2v2j2OcJRx&appid=0af2119113dee5ec6f0c94c274cdfab3",LOGGER);
         System.out.println(result);
         JSONObject json = JSONObject.parseObject(result.get("data"));
